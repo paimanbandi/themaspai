@@ -61,6 +61,14 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/typescript.nvim")
 	use("onsails/lspkind.nvim")
 
+  use {
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup {
+    }
+    end
+  }
+
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
 

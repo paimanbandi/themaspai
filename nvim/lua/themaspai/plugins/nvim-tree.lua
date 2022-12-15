@@ -25,5 +25,9 @@ nvimtree.setup({
         enable = false,
       }
     }
-  }
+  },
+  filters = {
+    dotfiles = true,
+    custom = {}
+  },
 })
