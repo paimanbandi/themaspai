@@ -28,8 +28,8 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 
-	-- use({ "ellisonleao/gruvbox.nvim" })
-  use "rebelot/kanagawa.nvim"
+	use({ "ellisonleao/gruvbox.nvim" })
+  -- use "rebelot/kanagawa.nvim"
 
 	use("christoomey/vim-tmux-navigator")
 	use("numToStr/Comment.nvim")
@@ -96,6 +96,8 @@ return packer.startup(function(use)
 	})
 
   use('akinsho/toggleterm.nvim')
+
+  use('tveskag/nvim-blame-line')
 
 	if packer_bootstrap then
 		require("packer").sync()

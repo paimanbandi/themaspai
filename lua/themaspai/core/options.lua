@@ -56,3 +56,6 @@ local autoCommands = {
 
 M.nvim_create_augroups(autoCommands)
 
+local cmd = vim.cmd
+cmd[[autocmd BufEnter * EnableBlameLine]]
+

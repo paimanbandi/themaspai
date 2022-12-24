@@ -11,3 +11,4 @@ autopairs.setup({
 		java = false,
 	},
 })
+
