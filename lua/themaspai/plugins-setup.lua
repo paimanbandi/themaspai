@@ -28,7 +28,8 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 
-	use({ "ellisonleao/gruvbox.nvim" })
+	-- use({ "ellisonleao/gruvbox.nvim" })
+  use "rebelot/kanagawa.nvim"
 
 	use("christoomey/vim-tmux-navigator")
 	use("numToStr/Comment.nvim")
@@ -50,6 +51,10 @@ return packer.startup(function(use)
 	use("L3MON4D3/LuaSnip")
 	use("saadparwaiz1/cmp_luasnip")
 	use("rafamadriz/friendly-snippets")
+
+  use {'dsznajder/vscode-es7-javascript-react-snippets',
+    run = 'yarn install --frozen-lockfile && yarn compile'
+  }
 
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")

@@ -3,6 +3,10 @@ local opt = vim.opt
 opt.relativenumber = true
 opt.number = true
 
+opt.scrolloff = 10
+
+opt.updatetime = 50
+
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
@@ -16,6 +20,7 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = 'dark'
 opt.signcolumn = 'yes'
+opt.colorcolumn = '80'
 
 opt.backspace = 'indent,eol,start'
 

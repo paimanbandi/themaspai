@@ -1,8 +1,19 @@
 vim.g.mapleader = ' '
 local keymap = vim.keymap
+local builtin = require('telescope.builtin')
 
 keymap.set('i', 'hh', '<ESC>')
 keymap.set('i', 'HH', '<ESC>')
+
+keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+keymap.set('n', 'J', 'mzJ`z')
+
+keymap.set('n', '<C-d>', '<C-d>zz')
+keymap.set('n', '<C-u>', '<C-u>zz')
+
+keymap.set('x', '<leader>p', '"_dP')
 
 keymap.set('n', '<leader>sv', '<C-w>v')
 keymap.set('n', '<leader>sh', '<C-w>s')
@@ -18,8 +29,12 @@ keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
 
 -- telescope
 keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
+keymap.set('n', '<leader>fg', '<cmd>Telescope git_files<CR>')
 keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<CR>')
-keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<CR>')
+-- keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<CR>')
+keymap.set('n', '<leader>fc', function ()
+  builtin.grep_string({ search = vim.fn.input('Grep > ')});
+end)
 keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>')
 keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<CR>')
 

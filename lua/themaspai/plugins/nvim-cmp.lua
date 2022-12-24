@@ -14,6 +14,8 @@ if not lspkind_status then
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+require("luasnip").filetype_extend("javascript", { "html" })
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
