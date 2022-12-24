@@ -235,6 +235,20 @@ _G.packer_plugins = {
     path = "/Users/paiman/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
+  undotree = {
+    commands = { "UndotreeToggle" },
+    config = { "vim.g.undotree_SetFocusWhenToggle = 1" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/paiman/.local/share/nvim/site/pack/packer/opt/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-signify"] = {
+    loaded = true,
+    path = "/Users/paiman/.local/share/nvim/site/pack/packer/start/vim-signify",
+    url = "https://github.com/mhinz/vim-signify"
+  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/Users/paiman/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
@@ -258,6 +272,18 @@ time([[Defining packer_plugins]], false)
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'UndotreeToggle', function(cmdargs)
+          require('packer.load')({'undotree'}, { cmd = 'UndotreeToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'undotree'}, { cmd = 'UndotreeToggle' }, _G.packer_plugins)
+          return vim.fn.getcompletion('UndotreeToggle ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

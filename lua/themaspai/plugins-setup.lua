@@ -98,6 +98,13 @@ return packer.startup(function(use)
   use('akinsho/toggleterm.nvim')
 
   use('tveskag/nvim-blame-line')
+  use {
+    'mbbill/undotree',
+    cmd = 'UndotreeToggle',
+    config = [[vim.g.undotree_SetFocusWhenToggle = 1]],
+  }
+
+  use 'mhinz/vim-signify'
 
 	if packer_bootstrap then
 		require("packer").sync()

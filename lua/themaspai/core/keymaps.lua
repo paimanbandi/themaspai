@@ -57,3 +57,8 @@ keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
 keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
   {silent = true, noremap = true}
 )
+
+-- undotree
+keymap.set('n', '<F5>', ':UndotreeToggle<CR>', {noremap = true})
+keymap.set('n', '<leader>u', ':UndotreeShow<CR>', {noremap = true, silent = true})
+
