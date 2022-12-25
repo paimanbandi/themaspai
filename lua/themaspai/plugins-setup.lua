@@ -39,7 +39,6 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
 
 	-- autocompletion
@@ -88,7 +87,9 @@ return packer.startup(function(use)
 	use("windwp/nvim-ts-autotag")
 
 	-- debugging
-	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+  use("mfussenegger/nvim-dap") 
+  use("rcarriga/nvim-dap-ui")
+	use({ "mxsdev/nvim-dap-vscode-js" })
 	use({
 		"microsoft/vscode-js-debug",
 		opt = true,

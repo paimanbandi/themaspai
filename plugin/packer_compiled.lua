@@ -174,6 +174,11 @@ _G.packer_plugins = {
     path = "/Users/paiman/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/paiman/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
   ["nvim-dap-vscode-js"] = {
     loaded = true,
     path = "/Users/paiman/.local/share/nvim/site/pack/packer/start/nvim-dap-vscode-js",
