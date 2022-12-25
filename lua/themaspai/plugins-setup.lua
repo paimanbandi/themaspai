@@ -104,7 +104,9 @@ return packer.startup(function(use)
     config = [[vim.g.undotree_SetFocusWhenToggle = 1]],
   }
 
-  use 'mhinz/vim-signify'
+  use('mhinz/vim-signify')
+  use('tpope/vim-fugitive')
+  use("lukas-reineke/indent-blankline.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
